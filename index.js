@@ -1,5 +1,22 @@
-function fetchBooks() {
+// let ul = document.querySelector('#book-list')
 
+// function fetchBooks() {
+//   fetch('https://anapioficeandfire.com/api/books')
+//   .then(function(whateverYouWant){
+//     return whateverYouWant.json()
+//   })
+//   .then(function(justAnArgument){
+//     console.log(justAnArgument)
+//     justAnArgument.forEach(function(item){
+//       ul.innerHTML += `<li>${item.name}</li>`
+//     })
+//   })
+// }
+
+function fetchBooks(){
+  return fetch("https://anapioficeandfire.com/api/books")
+    .then(resp => resp.json())
+    .then(json => renderBooks(json))
 }
 
 function renderBooks(books) {
